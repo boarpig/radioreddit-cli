@@ -20,6 +20,9 @@ except KeyError:
     print "Available stations: %s" % ', '.join(sorted(stream_name_to_url))
     print "default: main"
     exit(1)
+except OSError as err:
+    if err.errno == 2:
+        print "You need mplayer to play streams."
 
 try:
     while not player.poll():
