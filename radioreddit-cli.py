@@ -23,6 +23,7 @@ except KeyError:
 except OSError as err:
     if err.errno == 2:
         print "You need mplayer to play streams."
+        exit(1)
 
 try:
     while not player.poll():
